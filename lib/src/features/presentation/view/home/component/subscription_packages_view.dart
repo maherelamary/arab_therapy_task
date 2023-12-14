@@ -23,9 +23,10 @@ class SubscriptionPackagesView extends StatelessWidget {
             shrinkWrap: true,
             primary: false,
             padding: EdgeInsets.symmetric(vertical: 22.vDp),
-            itemBuilder: (context, index) => const SubscriptionPackageItem(),
+            itemBuilder: (context, index) =>
+                SubscriptionPackageItem(label: index == 2 ? "شائع" : null),
             separatorBuilder: (context, _) => SizedBox(height: 18.vDp),
-            itemCount: 2,
+            itemCount: 3,
           ),
         ],
       ),

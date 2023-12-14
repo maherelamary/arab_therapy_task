@@ -1,7 +1,8 @@
 import 'package:arab_therapy_task/src/features/presentation/view/presentation.dart';
 
 class SubscriptionPackageItem extends StatelessWidget {
-  const SubscriptionPackageItem({super.key});
+  final String? label;
+  const SubscriptionPackageItem({super.key, this.label});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +12,7 @@ class SubscriptionPackageItem extends StatelessWidget {
         border: Border.all(color: const Color.fromRGBO(112, 112, 112, 0.24)),
         borderRadius: BorderRadius.circular(10),
       ),
-      padding: EdgeInsets.only(right: 18.hDp, top: 18.vDp, bottom: 22.vDp),
+      padding: EdgeInsets.only(right: 18.hDp, top: 22.vDp, bottom: 26.vDp),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -29,12 +30,40 @@ class SubscriptionPackageItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
-                      "حزمة الأمان",
-                      style: AppTextStyle.defaultAppTextStyle.copyWith(
-                        fontSize: AppTextStyle.fontSizeMedium,
-                        fontWeight: AppTextStyle.fontWeightMedium,
-                      ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            "حزمة الأمان",
+                            style: AppTextStyle.defaultAppTextStyle.copyWith(
+                              fontSize: AppTextStyle.fontSizeMedium,
+                              fontWeight: AppTextStyle.fontWeightMedium,
+                              height: 1.1.vDp,
+                            ),
+                            overflow: TextOverflow.clip,
+                          ),
+                        ),
+                        label != null
+                            ? Container(
+                                padding:
+                                    EdgeInsets.symmetric(horizontal: 24.hDp),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                      topRight: Radius.circular(16.hDp),
+                                      bottomRight: Radius.circular(16.hDp)),
+                                  color: Colors.amber,
+                                ),
+                                child: Text(
+                                  label!,
+                                  style: AppTextStyle.defaultAppTextStyle
+                                      .copyWith(
+                                          color: Colors.white,
+                                          fontSize:
+                                              AppTextStyle.fontSizeMedium),
+                                ),
+                              )
+                            : const SizedBox(height: 0.0, width: 0.0),
+                      ],
                     ),
                     SizedBox(height: 2.vDp),
                     RichText(
@@ -43,6 +72,7 @@ class SubscriptionPackageItem extends StatelessWidget {
                         text: "",
                         style: AppTextStyle.defaultAppTextStyle.copyWith(
                           fontSize: AppTextStyle.fontSizeSmall,
+                          height: 1.1.vDp,
                         ),
                         children: [
                           const TextSpan(
@@ -53,13 +83,14 @@ class SubscriptionPackageItem extends StatelessWidget {
                             style: AppTextStyle.defaultAppTextStyle.copyWith(
                               fontSize: AppTextStyle.fontSizeSmall,
                               fontWeight: AppTextStyle.fontWeightMedium,
+                              height: 1.1.vDp,
                             ),
                           ),
                           const TextSpan(text: "لأول جلسة")
                         ],
                       ),
                     ),
-                    SizedBox(height: 2.vDp),
+                    SizedBox(height: 4.vDp),
                     RichText(
                       textAlign: TextAlign.center,
                       text: TextSpan(
@@ -82,10 +113,11 @@ class SubscriptionPackageItem extends StatelessWidget {
                         ],
                       ),
                     ),
+                    SizedBox(height: 2.vDp),
                     Text(
                       "لأول أسبوع ثم\$59.99اسبوعياً",
                       style: AppTextStyle.defaultAppTextStyle.copyWith(
-                        fontSize: 13.hDp,
+                        fontSize: 12.hDp,
                       ),
                     ),
                   ],
