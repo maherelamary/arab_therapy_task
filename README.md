@@ -1,16 +1,12 @@
 # arab_therapy_task
 
-A new Flutter project.
+A sample application consists of 3 pages, splash page, landing page with "START NOW" button and named items page contains list of itemsm, each item has image, description and title.
 
-## Getting Started
+### Architecture pattern
+#### Domain Driven Design
 
-This project is a starting point for a Flutter application.
+### State management
+#### Bloc
 
-A few resources to get you started if this is your first Flutter project:
+### THIS APP IS DESIGNED FOR MOBILE PLATFORM.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
