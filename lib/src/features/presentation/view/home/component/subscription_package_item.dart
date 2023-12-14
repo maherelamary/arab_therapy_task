@@ -100,8 +100,13 @@ class SubscriptionPackageItem extends StatelessWidget {
                           fontWeight: AppTextStyle.fontWeightBold,
                         ),
                         children: [
-                          const TextSpan(
+                          TextSpan(
                             text: "29.99 ",
+                            style: AppTextStyle.defaultAppTextStyle.copyWith(
+                              fontSize: AppTextStyle.fontSizeLarge,
+                              fontWeight: AppTextStyle.fontWeightBold,
+                              color: Colors.teal,
+                            ),
                           ),
                           TextSpan(
                             text: "\$",
